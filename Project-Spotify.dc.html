@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#161616; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:#4caf50; }
+  .sp-section-title { font-size:28px; font-weight:700; color:#fff; position:relative; display:inline-block; padding-bottom:16px; margin:0 0 34px; }
+  .sp-section-title::after { content:''; position:absolute; bottom:0; left:0; width:60px; height:4px; background:#4caf50; border-radius:2px; }
+  .sp-card { background:#1e1e1e; border:1px solid #333333; border-radius:12px; padding:28px; }
+  .sp-step { background:#1e1e1e; border:1px solid #333333; border-radius:12px; padding:22px 20px; flex:1; min-width:180px; }
+  .sp-step--pain { background:#2a1a1a; border:1px solid #4d2a2a; }
+  .sp-arrow { color:#4caf50; font-size:20px; display:flex; align-items:center; justify-content:center; padding:0 6px; }
+  .sp-badge { width:26px; height:26px; border-radius:50%; background:#4caf50; color:#161616; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+  .sp-badge--pain { background:#ff5252; }
+  .sp-gallery img { border-radius:10px; box-shadow:0 12px 30px rgba(0,0,0,0.45); transition:transform .2s ease; }
+  .sp-gallery img:hover { transform:scale(1.03) rotate(0deg) !important; }
+</style>
+</helmet>
+
+<div style="font-family:'Roboto',sans-serif;color:#e6e6e6;background:#161616;">
+
+  <div style="position:fixed;top:0;left:0;right:0;height:56px;background:rgba(10,10,10,0.94);backdrop-filter:blur(8px);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(255,255,255,0.06);">
+    <a href="Home.dc.html" style="font-family:'Inter',sans-serif;color:#f2f2f2;font-size:13px;font-weight:600;">&larr; 作品集</a>
+    <div style="display:flex;gap:18px;align-items:center;">
+      <a href="Project-LuckLink.dc.html" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);"></a>
+      <a href="Project-FatCompany.dc.html" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);"></a>
+      <a href="Project-Liangxiang.dc.html" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);"></a>
+      <a href="Project-CoolBox.dc.html" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);"></a>
+      <a href="Project-KillMyself.dc.html" style="width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.25);"></a>
+      <a href="Project-Spotify.dc.html" style="width:7px;height:7px;border-radius:50%;background:#4caf50;"></a>
+    </div>
+    <a href="Home.dc.html" style="font-family:'Inter',sans-serif;color:#f2f2f2;font-size:13px;font-weight:600;">返回首页 &rarr;</a>
+  </div>
+
+  <!-- HERO -->
+  <div style="position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-160px;right:-120px;width:480px;height:480px;border-radius:50%;background:#4caf50;opacity:0.12;filter:blur(60px);"></div>
+    <div style="position:absolute;top:260px;left:-140px;width:340px;height:340px;border-radius:50%;background:#4caf50;opacity:0.08;filter:blur(60px);"></div>
+    <div style="position:relative;padding:150px 64px 50px;max-width:1100px;margin:0 auto;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4caf50;text-transform:uppercase;margin-bottom:16px;">UX Case Study</div>
+      <div style="font-weight:700;font-size:56px;line-height:1.12;color:#fff;">Spotify Optimization</div>
+      <div style="font-size:19px;color:#a0a0a0;margin-top:14px;">Randomly Listen to Interested Content</div>
+      <p style="font-size:15px;line-height:1.85;color:#a0a0a0;margin-top:30px;max-width:820px;">This project aims to combine AI with Spotify to create a more intuitive song&#8209;identification experience by analyzing both users&rsquo; implicit and explicit signals. Our goal is to help users naturally recognize and capture songs they encounter in everyday moments, even when they don&rsquo;t know the song&rsquo;s name, artist, or language. By integrating AI recognition with behavioral insights and user&#8209;provided cues, the system enables smoother discovery from vague memories or ambient audio to accurate matches and deeper musical understanding.</p>
+    </div>
+  </div>
+
+  <!-- USER ANALYSIS & PAIN POINTS -->
+  <div style="padding:20px 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">User Analysis &amp; Pain Points</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <div class="sp-card" style="flex:1;min-width:320px;">
+        <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:16px;">User Motivations</div>
+        <ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="display:flex;gap:10px;font-size:14px;color:#c9c9c9;line-height:1.6;"><span style="color:#4caf50;">&#9679;</span>Find favorite songs easily.</li>
+          <li style="display:flex;gap:10px;font-size:14px;color:#c9c9c9;line-height:1.6;"><span style="color:#4caf50;">&#9679;</span>Access a comprehensive music library.</li>
+          <li style="display:flex;gap:10px;font-size:14px;color:#c9c9c9;line-height:1.6;"><span style="color:#4caf50;">&#9679;</span>Friendly user experience.</li>
+          <li style="display:flex;gap:10px;font-size:14px;color:#c9c9c9;line-height:1.6;"><span style="color:#4caf50;">&#9679;</span>Personalized recommendations &amp; discovering new music.</li>
+        </ul>
+      </div>
+      <div class="sp-card" style="flex:1;min-width:320px;">
+        <div style="font-size:17px;font-weight:700;color:#fff;margin-bottom:16px;">The Problem</div>
+        <p style="font-size:14px;color:#c9c9c9;line-height:1.7;margin:0 0 16px;">The song search is not precise, especially with language barriers.</p>
+        <div style="border-left:3px solid #4caf50;padding:4px 0 4px 14px;margin-bottom:12px;font-size:13px;font-style:italic;color:#a0a0a0;">&ldquo;When I search for Thai songs in Chinese, most of the results are Japanese songs.&rdquo;</div>
+        <div style="border-left:3px solid #4caf50;padding:4px 0 4px 14px;margin-bottom:18px;font-size:13px;font-style:italic;color:#a0a0a0;">&ldquo;I can&rsquo;t find the song if I don&rsquo;t know the singer&hellip; I can&rsquo;t type Korean, French, or Thai.&rdquo;</div>
+        <div style="font-size:13px;font-weight:700;color:#4caf50;">Core Question &rarr;</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW MIGHT WE -->
+  <div style="padding:0 64px 70px;max-width:900px;margin:0 auto;">
+    <div style="background:rgba(76,175,80,0.08);border:1px solid rgba(76,175,80,0.3);border-radius:16px;padding:44px 40px;text-align:center;">
+      <div style="font-size:13px;font-weight:700;letter-spacing:2px;color:#4caf50;text-transform:uppercase;margin-bottom:14px;">How Might We</div>
+      <div style="font-size:22px;line-height:1.6;color:#fff;font-weight:500;">&ldquo;How might we help users seamlessly identify and capture songs they hear in everyday moments, even when they don&rsquo;t know the song&rsquo;s name, artist, or even the language?&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- USER JOURNEY MAPS -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">User Journey Maps</div>
+
+    <div style="font-size:15px;font-weight:700;color:#e6e6e6;margin-bottom:16px;">1. The Standard Flow</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;">
+      <div class="sp-step"><div class="sp-badge">1</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">New User Registers</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">Selects favorite Artists/Podcasts.</div></div>
+      <div class="sp-arrow">&rarr;</div>
+      <div class="sp-step"><div class="sp-badge">2</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Homepage Recommendations</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">System generates personalized content.</div></div>
+      <div class="sp-arrow">&rarr;</div>
+      <div class="sp-step"><div class="sp-badge">3</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Interaction</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">Like, Don&rsquo;t Play Again, Swipe to Skip.</div></div>
+      <div class="sp-arrow">&rarr;</div>
+      <div class="sp-step"><div class="sp-badge">4</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Optimization</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">Algorithm refines taste precisely.</div></div>
+    </div>
+
+    <div style="font-size:15px;font-weight:700;color:#ff8a80;margin-bottom:16px;">2. The &ldquo;Accidental&rdquo; Flow (Pain Point)</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <div class="sp-step sp-step--pain"><div class="sp-badge sp-badge--pain">1</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Immerse Craving</div><div style="font-size:12.5px;color:#c9a3a3;line-height:1.6;">Accidentally hear a song you like very much.</div></div>
+      <div class="sp-arrow" style="color:#ff5252;">&rarr;</div>
+      <div class="sp-step sp-step--pain"><div class="sp-badge sp-badge--pain">2</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Attempt Search</div><div style="font-size:12.5px;color:#c9a3a3;line-height:1.6;">Search by conditions (Language/Era/Genre) or Lyrics.</div></div>
+      <div class="sp-arrow" style="color:#ff5252;">&rarr;</div>
+      <div class="sp-step sp-step--pain"><div class="sp-badge sp-badge--pain">3</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Failure</div><div style="font-size:12.5px;color:#c9a3a3;line-height:1.6;">&ldquo;I don&rsquo;t know the title or artist.&rdquo; &ldquo;I can&rsquo;t type the language.&rdquo;</div></div>
+      <div class="sp-arrow" style="color:#ff5252;">&rarr;</div>
+      <div class="sp-step sp-step--pain"><div class="sp-badge sp-badge--pain">4</div><div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;">Outcome</div><div style="font-size:12.5px;color:#c9a3a3;line-height:1.6;">Low efficiency. Poor experience. You miss a good song.</div></div>
+    </div>
+  </div>
+
+  <!-- OPTIMIZATION IDEAS -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Optimization Ideas</div>
+    <p style="font-size:14px;color:#a0a0a0;margin:-16px 0 28px;max-width:640px;">Bridging the gap between hearing a melody and adding it to your library.</p>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <div class="sp-card" style="flex:1;min-width:230px;">
+        <img src="assets/spotify/icon-humming.png" style="width:56px;height:auto;margin-bottom:14px;">
+        <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">Humming Search</div>
+        <div style="font-size:13px;color:#a0a0a0;line-height:1.6;">By humming the tune, play the original song to obtain song information immediately.</div>
+      </div>
+      <div class="sp-card" style="flex:1;min-width:230px;">
+        <img src="assets/spotify/icon-genre.png" style="width:56px;height:auto;margin-bottom:14px;">
+        <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">Genre Education</div>
+        <div style="font-size:13px;color:#a0a0a0;line-height:1.6;">Interactive features that help users understand which genre their preferred songs belong to.</div>
+      </div>
+      <div class="sp-card" style="flex:1;min-width:230px;">
+        <img src="assets/spotify/icon-ai-match.png" style="width:56px;height:auto;margin-bottom:14px;">
+        <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">AI Melody Match</div>
+        <div style="font-size:13px;color:#a0a0a0;line-height:1.6;">Using AI to identify song content and automatically match similar songs you have heard.</div>
+      </div>
+      <div class="sp-card" style="flex:1;min-width:230px;">
+        <img src="assets/spotify/icon-image-rec.png" style="width:56px;height:auto;margin-bottom:14px;">
+        <div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;">Image Recognition</div>
+        <div style="font-size:13px;color:#a0a0a0;line-height:1.6;">Scan an album cover or poster to instantly identify the album and artist.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STORYBOARD -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Storyboard</div>
+    <img src="assets/spotify/storyboard.png" style="width:100%;max-width:760px;height:auto;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.45);display:block;margin:0 auto;">
+  </div>
+
+  <!-- HEAR -> CAPTURE -> IDENTIFY -> CONNECT -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <div class="sp-step"><div style="font-size:14px;font-weight:700;color:#4caf50;margin-bottom:8px;">Hear</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">User hears a Thai song at a cafe but doesn&rsquo;t know the language.</div></div>
+      <div class="sp-arrow">&rarr;</div>
+      <div class="sp-step"><div style="font-size:14px;font-weight:700;color:#4caf50;margin-bottom:8px;">Capture</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">User opens Spotipy and hums the melody or records a snippet.</div></div>
+      <div class="sp-arrow">&rarr;</div>
+      <div class="sp-step"><div style="font-size:14px;font-weight:700;color:#4caf50;margin-bottom:8px;">Identify</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">AI identifies the song despite language barriers.</div></div>
+      <div class="sp-arrow">&rarr;</div>
+      <div class="sp-step"><div style="font-size:14px;font-weight:700;color:#4caf50;margin-bottom:8px;">Connect</div><div style="font-size:12.5px;color:#a0a0a0;line-height:1.6;">Song added to library. System recommends similar Thai Pop.</div></div>
+    </div>
+  </div>
+
+  <!-- LOFI -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Lofi</div>
+    <p style="font-size:14px;color:#a0a0a0;line-height:1.8;max-width:760px;margin:-16px 0 28px;">We first created the lo&#8209;fi design, and now we&rsquo;re planning to add a prominent entry point on the desktop interface so that listeners can quickly and effortlessly access it.</p>
+    <img src="assets/spotify/lofi.png" style="width:100%;max-width:837px;height:auto;border-radius:10px;box-shadow:0 12px 30px rgba(0,0,0,0.45);display:block;">
+  </div>
+
+  <!-- HOMEPAGE -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Homepage</div>
+    <p style="font-size:14px;color:#a0a0a0;line-height:1.8;max-width:760px;margin:-16px 0 28px;">Quickly guide users to three music&#8209;search categories through the home page buttons.</p>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;justify-content:center;">
+      <img src="assets/spotify/homepage-1.png" style="height:520px;width:auto;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.45);">
+      <img src="assets/spotify/homepage-2.png" style="height:520px;width:auto;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.45);">
+    </div>
+  </div>
+
+  <!-- ECHO FIND -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Echo Find</div>
+    <p style="font-size:14px;color:#a0a0a0;line-height:1.8;max-width:780px;margin:-16px 0 28px;">Echo Find is designed for listeners who want to quickly identify a song they&rsquo;re currently hearing. Using AI recognition, it captures the user&rsquo;s explicit signal to locate musically similar segments and find the matching track. Once the song is identified, Echo Find provides genre and artist insights based on the track&rsquo;s attributes and past listeners&rsquo; implicit signals, helping users better understand their own musical preferences. It also uses these implicit signals to recommend similar songs, creating a more personalized discovery experience.</p>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;justify-content:center;">
+      <img src="assets/spotify/echofind-1.png" style="height:480px;width:auto;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.45);">
+      <img src="assets/spotify/echofind-2.png" style="height:480px;width:auto;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.45);">
+    </div>
+  </div>
+
+  <!-- MUSIC HUNTER -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Music Hunter</div>
+    <p style="font-size:14px;color:#a0a0a0;line-height:1.8;max-width:780px;margin:-16px 0 28px;">On the Music Hunter page, when users want to find a song but only remember vague details, they can submit the clues they recall and post a request, allowing other users to help identify the track.</p>
+    <img src="assets/spotify/musichunter.png" style="display:block;margin:0 auto;height:520px;width:auto;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.45);">
+  </div>
+
+  <!-- TYPE TO SOUND -->
+  <div style="padding:0 64px 70px;max-width:1100px;margin:0 auto;">
+    <div class="sp-section-title">Type - To - Sound</div>
+    <p style="font-size:14px;color:#a0a0a0;line-height:1.8;max-width:780px;margin:-16px 0 28px;">Type&#8209;To&#8209;Sound is designed for situations where a user is listening to a foreign song or can&rsquo;t clearly understand the lyrics. The user can type out what they think the lyrics sound like, and the AI compares the input against its phonetic database to surface songs with similar pronunciations. It then shows the user which part of the song the matched lyric comes from, along with the language of the original lyrics.</p>
+    <img src="assets/spotify/typetosound.png" style="display:block;margin:0 auto;height:520px;width:auto;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,0.45);">
+  </div>
+
+  <!-- GALLERY -->
+  <div class="sp-gallery" style="padding:0 64px 90px;max-width:1100px;margin:0 auto;display:flex;gap:26px;flex-wrap:wrap;justify-content:center;align-items:center;">
+    <img src="assets/spotify/gallery-1.png" style="height:300px;width:auto;transform:rotate(-3deg);">
+    <img src="assets/spotify/gallery-2.png" style="height:300px;width:auto;transform:rotate(2deg);">
+    <img src="assets/spotify/gallery-3.png" style="height:300px;width:auto;transform:rotate(-2deg);">
+    <img src="assets/spotify/gallery-4.png" style="height:300px;width:auto;transform:rotate(3deg);">
+    <img src="assets/spotify/gallery-5.png" style="height:220px;width:auto;transform:rotate(-1deg);">
+    <img src="assets/spotify/gallery-6.png" style="height:220px;width:auto;transform:rotate(2deg);">
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align:center;padding:0 64px 40px;font-size:12px;color:rgba(230,230,230,0.4);">&copy; 2025 Spotipy Optimization Project. Concept Design.</div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:36px 64px;border-top:1px solid rgba(255,255,255,0.08);font-family:'Inter',sans-serif;">
+    <a href="Project-KillMyself.dc.html" style="font-size:13px;font-weight:600;color:rgba(230,230,230,0.6);">&larr; 上一个项目：Kill Myself Three Times</a>
+    <a href="Home.dc.html" style="font-size:14px;font-weight:700;color:#4caf50;">返回作品集首页 &rarr;</a>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

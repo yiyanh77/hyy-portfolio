@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Archivo:wght@600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin:0; background:#100e0c; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:inherit; }
+  @keyframes hang1 { 0%,100%{transform:rotate(-1.2deg)} 50%{transform:rotate(0.6deg)} }
+  @keyframes hang2 { 0%,100%{transform:rotate(0.5deg)} 50%{transform:rotate(-0.7deg)} }
+  @keyframes hang3 { 0%,100%{transform:rotate(-0.6deg)} 50%{transform:rotate(1.1deg)} }
+</style>
+</helmet>
+
+<div style="display:flex;gap:20px;padding:20px;background:#100e0c;min-width:1900px;font-family:'IBM Plex Mono',monospace;color:#241c12;align-items:stretch;">
+
+  <div style="width:400px;flex:none;padding:9px;border-radius:26px;background:linear-gradient(150deg,#f4f4f2,#8e8b86 38%,#dcdad5 55%,#6f6c67);">
+    <div style="height:100%;box-sizing:border-box;border-radius:18px;background:#f6f0e3;padding:44px 40px;display:flex;flex-direction:column;">
+
+      <div style="font-size:21px;font-weight:700;letter-spacing:1.6px;">HYY PORTFOLIO</div>
+      <div style="font-size:12px;letter-spacing:1.1px;margin-top:10px;color:rgba(36,28,18,0.72);line-height:1.6;">INTERACTION &amp; SPECULATIVE DESIGN.</div>
+      <div style="height:1px;background:rgba(36,28,18,0.22);margin:26px 0;"></div>
+
+      <div style="font-size:13px;font-weight:700;letter-spacing:1.4px;">WHY NOT MODE</div>
+      <div style="display:flex;align-items:center;gap:9px;margin-top:12px;font-size:12px;letter-spacing:1px;color:rgba(36,28,18,0.8);">
+        <div style="width:8px;height:8px;border-radius:50%;border:1.5px solid #241c12;"></div>
+        <div>CURIOSITY ACTIVE</div>
+      </div>
+      <div style="height:1px;background:rgba(36,28,18,0.22);margin:26px 0;"></div>
+
+      <div style="position:relative;padding:14px 4px 4px;">
+        <div style="position:absolute;top:0;left:0;width:12px;height:12px;border-left:1.5px solid rgba(36,28,18,0.5);border-top:1.5px solid rgba(36,28,18,0.5);"></div>
+        <div style="position:absolute;top:0;right:0;width:12px;height:12px;border-right:1.5px solid rgba(36,28,18,0.5);border-top:1.5px solid rgba(36,28,18,0.5);"></div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:1.4px;margin-bottom:16px;">BOARD LEGEND</div>
+        <div style="display:flex;flex-direction:column;gap:11px;font-size:12px;letter-spacing:0.6px;">
+          <div style="display:flex;gap:14px;align-items:baseline;"><div style="width:22px;font-weight:700;">01</div><div style="flex:1;">Key Tag</div><div style="color:rgba(36,28,18,0.6);">About</div></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><div style="width:22px;font-weight:700;">02</div><div style="flex:1;">Clear File</div><div style="color:rgba(36,28,18,0.6);">Works</div></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><div style="width:22px;font-weight:700;">03</div><div style="flex:1;">ID Card</div><div style="color:rgba(36,28,18,0.6);">Resume</div></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><div style="width:22px;font-weight:700;">04</div><div style="flex:1;">Black Badge</div><div style="color:rgba(36,28,18,0.6);">Categories</div></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><div style="width:22px;font-weight:700;">05</div><div style="flex:1;">Airmail Card</div><div style="color:rgba(36,28,18,0.6);">Contact</div></div>
+          <div style="display:flex;gap:14px;align-items:baseline;"><div style="width:22px;font-weight:700;">06</div><div style="flex:1;">Note Tag</div><div style="color:rgba(36,28,18,0.6);">Updates</div></div>
+        </div>
+      </div>
+
+      <div style="position:relative;padding:14px 4px 4px;margin-top:30px;">
+        <div style="position:absolute;top:0;left:0;width:12px;height:12px;border-left:1.5px solid rgba(36,28,18,0.5);border-top:1.5px solid rgba(36,28,18,0.5);"></div>
+        <div style="position:absolute;top:0;right:0;width:12px;height:12px;border-right:1.5px solid rgba(36,28,18,0.5);border-top:1.5px solid rgba(36,28,18,0.5);"></div>
+        <div style="font-size:13px;font-weight:700;letter-spacing:1.4px;margin-bottom:14px;">OBJECT INTERFACE</div>
+        <div style="display:flex;flex-direction:column;gap:9px;font-size:12px;letter-spacing:0.6px;color:rgba(36,28,18,0.8);">
+          <div>&rarr; Hover for details</div>
+          <div>&rarr; Click to unfold</div>
+        </div>
+      </div>
+
+      <div style="height:1px;background:rgba(36,28,18,0.22);margin:30px 0 26px;"></div>
+
+      <div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:37px;line-height:0.98;letter-spacing:-1.2px;">PEOPLE/BODIES<br>SYSTEMS&amp;<br>SPECULATIVE<br>FUTURES.</div>
+
+      <div style="display:flex;gap:20px;align-items:flex-end;margin-top:auto;padding-top:34px;">
+        <div style="display:flex;gap:10px;">
+          <div style="width:62px;height:62px;"><image-slot id="v2-qr1" shape="rect" placeholder="QR 1"></image-slot></div>
+          <div style="width:62px;height:62px;"><image-slot id="v2-qr2" shape="rect" placeholder="QR 2"></image-slot></div>
+        </div>
+        <div style="flex:1;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.2px;">CONNECT &amp; FOLLOW</div>
+          <div style="height:1px;background:rgba(36,28,18,0.22);margin:9px 0;"></div>
+          <div style="font-size:11px;line-height:1.6;color:rgba(36,28,18,0.72);">Discover my works<br>let's cooperate</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="flex:1;padding:9px;border-radius:26px;background:linear-gradient(150deg,#f4f4f2,#8e8b86 38%,#dcdad5 55%,#6f6c67);">
+    <div style="position:relative;height:1180px;border-radius:18px;background:#f2e7d3;background-image:radial-gradient(circle at center, rgba(48,36,22,0.42) 3.2px, rgba(255,255,255,0.42) 3.8px, transparent 5px);background-size:52px 52px;background-position:26px 26px;overflow:hidden;">
+
+      <a href="#" style="position:absolute;left:70px;top:34px;display:flex;flex-direction:column;align-items:center;animation:hang1 5.4s ease-in-out infinite;transform-origin:top center;">
+        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#8f8d88 45%,#e6e4df 62%,#75736e);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,0.28);">
+          <div style="width:32px;height:32px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.35);"></div>
+        </div>
+        <div style="width:4px;height:16px;background:linear-gradient(90deg,#9d9b96,#e8e6e1,#8b8984);margin-top:-4px;"></div>
+        <div style="position:relative;width:172px;padding:34px 22px 26px;border-radius:20px;background:linear-gradient(160deg,#fbc73c,#e9a70c);box-shadow:0 18px 26px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.5);">
+          <div style="position:absolute;top:14px;left:50%;transform:translateX(-50%);width:20px;height:20px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 3px rgba(0,0,0,0.35),0 0 0 3px #cfcdc8;"></div>
+          <div style="font-size:15px;font-weight:600;letter-spacing:1px;margin-top:8px;color:#3a2b04;">01</div>
+          <div style="font-size:18px;font-weight:700;letter-spacing:0.6px;margin-top:6px;color:#241c12;">ABOUT ME</div>
+          <div style="font-family:'Noto Sans SC',sans-serif;font-size:14px;margin-top:6px;color:#3a2b04;">个人简介</div>
+          <div style="width:26px;height:1.5px;background:rgba(58,43,4,0.5);margin:16px 0;"></div>
+          <div style="font-size:11.5px;line-height:1.7;color:rgba(36,28,18,0.75);">Know more about my background and vision.</div>
+          <div style="font-size:17px;margin-top:26px;text-align:right;color:#241c12;">&rarr;</div>
+        </div>
+      </a>
+
+      <div style="position:absolute;left:330px;top:24px;display:flex;flex-direction:column;align-items:center;animation:hang2 6.2s ease-in-out infinite;transform-origin:top center;">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#8f8d88 45%,#e6e4df 62%,#75736e);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,0.28);">
+          <div style="width:34px;height:34px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.35);"></div>
+        </div>
+        <div style="width:34px;height:26px;margin-top:-6px;border-radius:5px;background:linear-gradient(90deg,#8d8b86,#f0eee9 45%,#7e7c77);box-shadow:0 2px 4px rgba(0,0,0,0.3);"></div>
+        <div style="position:relative;width:600px;padding:16px;border-radius:12px;background:linear-gradient(155deg,rgba(255,255,255,0.62),rgba(255,255,255,0.34));border:1px solid rgba(255,255,255,0.85);box-shadow:0 24px 34px rgba(0,0,0,0.24),inset 0 1px 0 rgba(255,255,255,0.9);backdrop-filter:blur(3px);margin-top:-4px;">
+          <div style="position:absolute;top:9px;left:9px;width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#f2f0eb,#8b8984);"></div>
+          <div style="position:absolute;top:9px;right:9px;width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#f2f0eb,#8b8984);"></div>
+          <div style="position:absolute;bottom:9px;left:9px;width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#f2f0eb,#8b8984);"></div>
+          <div style="position:absolute;bottom:9px;right:9px;width:9px;height:9px;border-radius:50%;background:linear-gradient(145deg,#f2f0eb,#8b8984);"></div>
+
+          <div style="background:#fdfcfa;border-radius:7px;padding:30px 30px 22px;">
+            <div style="font-size:24px;font-weight:600;letter-spacing:0.5px;">02</div>
+            <div style="font-family:'Archivo',sans-serif;font-size:31px;font-weight:700;letter-spacing:0.4px;margin-top:4px;">SELECTED WORKS</div>
+            <div style="font-family:'Noto Sans SC',sans-serif;font-size:22px;font-weight:500;margin-top:4px;">精选作品</div>
+            <div style="width:32px;height:2px;background:#241c12;margin:18px 0 14px;"></div>
+            <div style="font-size:12px;line-height:1.75;color:rgba(36,28,18,0.7);max-width:330px;">Ten projects across interaction design, multimodal research, speculative concepts and games.</div>
+
+            <div style="display:flex;flex-direction:column;margin-top:22px;border-top:1px solid rgba(36,28,18,0.12);">
+              <a href="Project-LuckLink.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">01</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">LuckLink</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">情感陪伴 · UI/UX</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r1" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-CoolBox.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">02</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">The Cool Box Plan</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">户外降温 · UI/UX</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r2" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-Cathletics.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">03</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">Cathletics</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">运动康复 · UI/UX</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r3" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-Liangxiang.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">04</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">LIANGXIANG</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">展览设计 · Multimodal</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r4" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-ARIA.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">05</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">ARIA Glasses</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">多模态交流研究 · Multimodal</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r5" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-ChewingLove.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">06</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">Chewing Love</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">可穿戴交互 · Multimodal</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r6" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-FatCompany.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">07</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">Fat Company</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">思辨设计 · Concept</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r7" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-KillMyself.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">08</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">Kill Myself Three Times</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">行为影像 · Concept</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r8" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-Chronicles.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;border-bottom:1px solid rgba(36,28,18,0.1);">
+                <div style="width:26px;font-size:12px;font-weight:600;">09</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">Chronicles of Shadows</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">叙事游戏 · Concept</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r9" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+              <a href="Project-Cybershoes.dc.html" style="display:flex;align-items:center;gap:16px;padding:9px 4px;">
+                <div style="width:26px;font-size:12px;font-weight:600;">10</div>
+                <div style="flex:1;"><div style="font-size:12.5px;font-weight:600;">Cybershoes VR</div><div style="font-family:'Noto Sans SC',sans-serif;font-size:11px;color:rgba(36,28,18,0.55);margin-top:1px;">VR 沉浸研究 · Research</div></div>
+                <div style="width:74px;height:44px;flex:none;"><image-slot id="v2-r10" shape="rect" placeholder="cover"></image-slot></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" style="position:absolute;left:1010px;top:40px;display:flex;flex-direction:column;align-items:center;animation:hang3 5.8s ease-in-out infinite;transform-origin:top center;">
+        <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#8f8d88 45%,#e6e4df 62%,#75736e);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,0.28);">
+          <div style="width:32px;height:32px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.35);"></div>
+        </div>
+        <div style="width:40px;height:86px;margin-top:-8px;border-radius:6px;background:#e0ddd6;border:1px dashed rgba(36,28,18,0.28);box-shadow:0 3px 6px rgba(0,0,0,0.18);"></div>
+        <div style="width:340px;margin-top:-10px;padding:13px;border-radius:14px;background:#e0ddd6;border:1px dashed rgba(36,28,18,0.3);box-shadow:0 18px 26px rgba(0,0,0,0.26);">
+          <div style="background:#fdfcfa;border-radius:8px;padding:20px 22px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+              <div style="font-size:16px;font-weight:700;letter-spacing:0.6px;">03 RESUME</div>
+              <div style="font-family:'Noto Sans SC',sans-serif;font-size:12px;line-height:1.5;text-align:right;color:rgba(36,28,18,0.7);">简历<br>信息</div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:center;margin-top:20px;">
+              <div style="width:62px;height:62px;flex:none;"><image-slot id="v2-portrait" shape="rect" placeholder="portrait"></image-slot></div>
+              <div style="font-size:12px;line-height:1.9;color:rgba(36,28,18,0.8);">Work experience<br>Education</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:22px;padding-top:14px;border-top:1px solid rgba(36,28,18,0.14);">
+              <div style="font-size:12.5px;font-weight:700;letter-spacing:1px;">VIEW CV</div>
+              <div style="font-size:15px;">&rarr;</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <div style="position:absolute;left:110px;top:560px;display:flex;flex-direction:column;align-items:center;animation:hang2 5.1s ease-in-out infinite;transform-origin:top center;">
+        <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#8f8d88 45%,#e6e4df 62%,#75736e);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,0.28);">
+          <div style="width:30px;height:30px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.35);"></div>
+        </div>
+        <div style="width:264px;margin-top:-6px;padding:4px;border-radius:132px / 168px;background:linear-gradient(150deg,#f6f4ef,#8b8984 45%,#dfddd8 60%,#77756f);box-shadow:0 20px 30px rgba(0,0,0,0.3);">
+          <div style="border-radius:128px / 164px;background:#17150f;padding:52px 34px;text-align:center;">
+            <div style="font-size:19px;font-weight:700;letter-spacing:0.8px;color:#f6f0e3;">04 CATEGORIES</div>
+            <div style="font-family:'Noto Sans SC',sans-serif;font-size:15px;margin-top:8px;color:rgba(246,240,227,0.72);">分类标签</div>
+            <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:30px;">
+              <div style="padding:6px 13px;border-radius:20px;border:1px solid #c9a24a;font-size:10.5px;font-weight:600;letter-spacing:0.8px;color:#e8c880;">UI / UX</div>
+              <div style="padding:6px 13px;border-radius:20px;border:1px solid #c9a24a;font-size:10.5px;font-weight:600;letter-spacing:0.8px;color:#e8c880;">MULTIMODAL</div>
+              <div style="padding:6px 13px;border-radius:20px;border:1px solid #c9a24a;font-size:10.5px;font-weight:600;letter-spacing:0.8px;color:#e8c880;">CONCEPT</div>
+              <div style="padding:6px 13px;border-radius:20px;border:1px solid #c9a24a;font-size:10.5px;font-weight:600;letter-spacing:0.8px;color:#e8c880;">RESEARCH</div>
+              <div style="padding:6px 13px;border-radius:20px;border:1px solid #c9a24a;font-size:10.5px;font-weight:600;letter-spacing:0.8px;color:#e8c880;">GAME DESIGN</div>
+            </div>
+            <div style="font-size:17px;margin-top:34px;color:#f6f0e3;">&rarr;</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#" style="position:absolute;left:980px;top:600px;display:flex;flex-direction:column;align-items:center;animation:hang1 6.5s ease-in-out infinite;transform-origin:top center;">
+        <div style="width:50px;height:50px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#8f8d88 45%,#e6e4df 62%,#75736e);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,0.28);">
+          <div style="width:30px;height:30px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.35);"></div>
+        </div>
+        <div style="width:4px;height:18px;background:linear-gradient(90deg,#9d9b96,#e8e6e1,#8b8984);margin-top:-4px;"></div>
+        <div style="width:330px;padding:9px;background:repeating-linear-gradient(45deg,#c8362e 0 9px,#fdfcfa 9px 18px,#2a5497 18px 27px,#fdfcfa 27px 36px);box-shadow:0 20px 28px rgba(0,0,0,0.28);">
+          <div style="background:#fdfcfa;padding:24px 26px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:14px;">
+              <div>
+                <div style="font-size:20px;font-weight:600;">05</div>
+                <div style="font-family:'Archivo',sans-serif;font-size:23px;font-weight:700;letter-spacing:0.4px;margin-top:2px;">CONTACT</div>
+                <div style="font-family:'Noto Sans SC',sans-serif;font-size:15px;margin-top:4px;">联系方法</div>
+              </div>
+              <div style="width:54px;height:54px;flex:none;border:1.5px dashed rgba(36,28,18,0.35);"><image-slot id="v2-stamp" shape="rect" placeholder="stamp"></image-slot></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:24px;font-size:12px;color:rgba(36,28,18,0.82);">
+              <div>hyy777@example.com</div>
+              <div>+86 000 0000 0000</div>
+              <div>Gothenburg, Sweden</div>
+            </div>
+            <div style="font-size:15px;margin-top:22px;text-align:right;">&rarr;</div>
+          </div>
+        </div>
+      </a>
+
+      <div style="position:absolute;left:1400px;top:520px;display:flex;flex-direction:column;align-items:center;animation:hang3 4.9s ease-in-out infinite;transform-origin:top center;">
+        <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(145deg,#ffffff,#8f8d88 45%,#e6e4df 62%,#75736e);display:flex;align-items:center;justify-content:center;box-shadow:0 3px 6px rgba(0,0,0,0.28);">
+          <div style="width:26px;height:26px;border-radius:50%;background:#f2e7d3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.35);"></div>
+        </div>
+        <div style="width:8px;height:56px;margin-top:-2px;background:repeating-linear-gradient(180deg,#c9c7c2 0 5px,#f0eee9 5px 8px);border-radius:4px;"></div>
+        <div style="width:44px;height:22px;margin-top:-4px;border-radius:4px;background:linear-gradient(160deg,#fbc73c,#e9a70c);box-shadow:0 2px 4px rgba(0,0,0,0.25);"></div>
+        <div style="width:200px;margin-top:-4px;padding:22px 22px 26px;background:#fdfcfa;box-shadow:0 18px 26px rgba(0,0,0,0.26);">
+          <div style="font-size:12px;font-weight:700;letter-spacing:1.2px;">OPEN TO WORK</div>
+          <div style="font-size:11.5px;line-height:1.75;margin-top:14px;color:rgba(36,28,18,0.75);">Let's create something great together!</div>
+          <div style="border-top:1.5px dashed rgba(36,28,18,0.3);margin:20px 0;"></div>
+          <div style="font-size:11.5px;line-height:1.75;color:rgba(36,28,18,0.75);">Available for full-time roles &amp; exciting projects.</div>
+          <div style="height:38px;margin-top:22px;background:repeating-linear-gradient(90deg,#241c12 0 2px,transparent 2px 4px,#241c12 4px 5px,transparent 5px 9px,#241c12 9px 12px,transparent 12px 14px);"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=Archivo:wght@600;700;800&amp;family=Caveat:wght@500;700&amp;family=Ma+Shan+Zheng&amp;family=Fraunces:ital,wght@0,600;0,700;1,600&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  @keyframes sway1 { 0%,100%{transform:rotate(-4.2deg)} 50%{transform:rotate(-1deg)} }
+  @keyframes sway2 { 0%,100%{transform:rotate(2deg)} 50%{transform:rotate(4deg)} }
+  @keyframes sway3 { 0%,100%{transform:rotate(-1.5deg)} 50%{transform:rotate(0.5deg)} }
+  @keyframes sway4 { 0%,100%{transform:rotate(3deg)} 50%{transform:rotate(1deg)} }
+  @keyframes toolWobble { 0%,100%{transform:rotate(-7deg)} 25%{transform:rotate(6deg)} 50%{transform:rotate(-4deg)} 75%{transform:rotate(5deg)} }
+  .idx-tool:hover img { animation: toolWobble .55s ease-in-out infinite; }
+  @keyframes shakeA { 0%,100%{transform:rotate(-2.4deg) translateY(0)} 50%{transform:rotate(1.8deg) translateY(-5px)} }
+  @keyframes shakeB { 0%,100%{transform:rotate(2.6deg) translateY(-3px)} 50%{transform:rotate(-1.4deg) translateY(2px)} }
+  @keyframes shakeC { 0%,100%{transform:rotate(-1.6deg) translateY(2px)} 50%{transform:rotate(2.8deg) translateY(-4px)} }
+  @keyframes sway5 { 0%,100%{transform:rotate(-2deg)} 50%{transform:rotate(-4deg)} }
+  body { margin:0; background:#d63b2c; }
+  a { color:inherit; text-decoration:none; }
+  a:hover { color:#c9452f; }
+</style>
+</helmet>
+
+
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:100;min-height:min(62px,7.4vw);background:#d63b2c;display:flex;align-items:center;justify-content:space-between;gap:min(12px,1.4vw);flex-wrap:nowrap;padding:min(10px,1.2vw) min(44px,3.5vw);font-family:'IBM Plex Mono',monospace;">
+  <div style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(19px,1.9vw);letter-spacing:0.09em;color:#f7efdf;white-space:nowrap;">HYY PORTFOLIO</div>
+  <div style="display:flex;gap:min(34px,2.6vw);align-items:center;flex-wrap:nowrap;flex:0 1 auto;justify-content:flex-end;">
+    <a href="#works" style="font-size:min(15px,1.4vw);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap;padding:0.4em 0.8em 0.47em;border-radius:0.34em;transition:background 0.16s,color 0.16s;background:transparent;color:rgba(247,239,223,0.78);" style-hover="background:#f7efdf;color:#d63b2c;">Works</a>
+    <a href="#about" style="font-size:min(15px,1.4vw);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap;padding:0.4em 0.8em 0.47em;border-radius:0.34em;transition:background 0.16s,color 0.16s;background:transparent;color:rgba(247,239,223,0.78);" style-hover="background:#f7efdf;color:#d63b2c;">About me</a>
+    <a href="#contact" style="font-size:min(15px,1.4vw);font-weight:600;letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap;padding:0.4em 0.8em 0.47em;border-radius:0.34em;transition:background 0.16s,color 0.16s;background:transparent;color:rgba(247,239,223,0.78);" style-hover="background:#f7efdf;color:#d63b2c;">Contact me</a>
+    <a href="https://www.linkedin.com/in/yiyanhe777" target="_blank" rel="noopener" aria-label="LinkedIn" title="/in/yiyanhe777" style="flex:none;display:flex;align-items:center;justify-content:center;width:min(32px,3vw);height:min(32px,3vw);border-radius:0.28em;background:rgba(247,239,223,0.16);color:#f7efdf;transition:background 0.16s,color 0.16s;" style-hover="background:#f7efdf;color:#d63b2c;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:60%;height:60%;display:block;"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.76-1.95C21.1 8.75 22 11 22 14.1V21h-4v-6.1c0-1.46-.52-2.45-1.82-2.45-1.06 0-1.68.71-1.96 1.4-.1.24-.12.58-.12.92V21h-4V9Z"></path></svg>
+    </a>
+    <a href="mailto:hyy51087@gmail.com" aria-label="Email" title="hyy51087@gmail.com" style="flex:none;display:flex;align-items:center;justify-content:center;width:min(32px,3vw);height:min(32px,3vw);border-radius:0.28em;background:rgba(247,239,223,0.16);color:#f7efdf;transition:background 0.16s,color 0.16s;" style-hover="background:#f7efdf;color:#d63b2c;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:62%;height:62%;display:block;"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13Zm2.4.5 7.6 5.6L19.6 6H4.4ZM4 8.2v9.8h16V8.2l-8 5.9-8-5.9Z"></path></svg>
+    </a>
+  </div>
+</div>
+
+<div ref="{{ shellRef }}" style="overflow:hidden;min-height:calc(100vh - 102px);margin:min(82px,9.6vw) clamp(8px,1.5vw,20px) clamp(8px,1.5vw,20px);border-radius:26px;background:#f2efe6;background-image:radial-gradient(circle at center, rgba(48,36,22,0.42) 3.2px, rgba(255,255,255,0.45) 3.9px, transparent 5px);background-size:52px 52px;background-position:26px 26px;box-shadow:inset 0 0 0 8px #f7efdf, inset 0 0 0 11px rgba(61,42,38,0.14);font-family:'IBM Plex Mono',monospace;position:relative;overflow:hidden;padding:10px 0 90px;">
+
+  <div id="about" ref="{{ hostRef }}" style="scroll-margin-top:96px;position:relative;z-index:2;width:100%;overflow:hidden;height:{{ hostH }}px;">
+      <div style="position:absolute;left:0;top:0;width:1200px;height:1130px;transform-origin:top left;transform:scale({{ scale }});">
+
+        <img src="assets/deco/ring-a.svg" alt="" aria-hidden="true" style="position:absolute;left:912px;top:-186px;width:560px;height:auto;pointer-events:none;z-index:0;">
+        <img src="assets/deco/ring-c.svg" alt="" aria-hidden="true" style="position:absolute;left:78px;top:296px;width:190px;height:auto;pointer-events:none;z-index:0;">
+        <img src="assets/deco/ring-b.svg" alt="" aria-hidden="true" style="position:absolute;left:104px;top:474px;width:186px;height:auto;pointer-events:none;z-index:0;">
+        <img src="assets/deco/chain.svg" alt="" aria-hidden="true" style="position:absolute;left:2px;top:588px;width:212px;height:auto;pointer-events:none;z-index:0;">
+
+        <div data-i="3" ref="{{ ref3 }}" onPointerDown="{{ startDrag }}" style="position:absolute;left:56px;top:64px;width:172px;transform:rotate(-4deg);background:#fbfaf5;padding:9px 9px 30px;box-shadow:0 10px 22px rgba(30,22,16,0.26);translate:{{ d3 }};cursor:grab;touch-action:none;user-select:none;z-index:{{ z3 }};">
+          <div style="position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:conic-gradient(from 210deg,#6f6c66,#cfccc5 12%,#ffffff 20%,#a8a5a0 32%,#5f5c57 45%,#9a9792 58%,#f2f0ec 70%,#b6b3ae 82%,#6b6862 95%,#6f6c66);box-shadow:0 2px 5px rgba(0,0,0,0.45);z-index:3;"></div>
+          <img src="assets/about/photo-portrait.jpg" alt="Portrait in Stockholm" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;">
+          <div style="position:absolute;left:0;right:0;bottom:7px;text-align:center;font-family:'Caveat',cursive;font-size:17px;color:#3d2a26;">that's me</div>
+        </div>
+
+        <div data-i="4" ref="{{ ref4 }}" onPointerDown="{{ startDrag }}" style="position:absolute;left:962px;top:238px;width:196px;transform:rotate(3deg);background:#fbfaf5;padding:9px 9px 30px;box-shadow:0 10px 22px rgba(30,22,16,0.26);translate:{{ d4 }};cursor:grab;touch-action:none;user-select:none;z-index:{{ z4 }};">
+          <div style="position:absolute;top:-7px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:conic-gradient(from 210deg,#6f6c66,#cfccc5 12%,#ffffff 20%,#a8a5a0 32%,#5f5c57 45%,#9a9792 58%,#f2f0ec 70%,#b6b3ae 82%,#6b6862 95%,#6f6c66);box-shadow:0 2px 5px rgba(0,0,0,0.45);z-index:3;"></div>
+          <img src="assets/about/photo-glacier.jpg" alt="On a glacier" style="display:block;width:100%;aspect-ratio:1/1;object-fit:cover;">
+          <div style="position:absolute;left:0;right:0;bottom:7px;text-align:center;font-family:'Caveat',cursive;font-size:17px;color:#3d2a26;">have a lovely day</div>
+        </div>
+
+        <div ref="{{ colRef }}" style="position:absolute;left:300px;top:44px;width:600px;text-align:center;z-index:2;">
+
+          <div style="background:#f2efe6;display:inline-block;padding:6px 14px 8px;font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:56px;line-height:1.1;letter-spacing:-0.6px;color:#16161a;text-wrap:pretty;">Hi! I'm Yiyan He,<br>interaction designer and<br>HCI researcher.</div>
+
+          <div style="background:#f2efe6;display:inline-block;padding:6px 14px 8px;margin-top:16px;font-family:'Caveat',cursive;font-weight:700;font-size:38px;line-height:1.2;letter-spacing:-0.2px;color:rgba(22,22,26,0.85);text-wrap:pretty;">Welcome to my portfolio. I hope you enjoy looking around.</div>
+
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;margin-top:26px;">
+          <a href="#cat-uiux" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 26px 14px;background:#d63b2c;color:#f7efdf;border-radius:34px;box-shadow:0 2px 4px rgba(30,22,16,0.12);transform:rotate(-3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap;">UI / UX</a>
+          <a href="#cat-research" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 26px 14px;background:#f7cf72;color:#2a1c08;border-radius:7px;box-shadow:0 2px 4px rgba(30,22,16,0.12);transform:rotate(3deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap;">Research</a>
+          <a href="#cat-multimodal" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 26px 14px;background:#16161a;color:#f2efe6;border-radius:7px;box-shadow:0 2px 4px rgba(30,22,16,0.12);transform:rotate(2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap;">Multimodal</a>
+          <a href="#cat-concept" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 26px 14px;background:#2f7d68;color:#eef5f1;border-radius:34px 10px 34px 10px;box-shadow:0 2px 4px rgba(30,22,16,0.12);transform:rotate(-2deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap;">Game</a>
+          <a href="#cat-visual" style="display:inline-flex;align-items:center;justify-content:center;padding:12px 26px 14px;background:#d8232a;color:#f7efdf;border-radius:7px;box-shadow:0 2px 4px rgba(30,22,16,0.12);transform:rotate(-2deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:18px;letter-spacing:1.8px;text-transform:uppercase;white-space:nowrap;">Visual Design</a>
+          </div>
+
+          <div style="background:#f2efe6;display:inline-block;padding:6px 14px 8px;margin-top:26px;max-width:560px;font-size:18px;line-height:1.78;color:rgba(22,22,26,0.78);text-wrap:pretty;">Hi there, I’m Yiyan He. As a designer and researcher, my curiosity lies in how emerging technologies shape our everyday lives and how we, in turn, shape them. Whether I am prototyping tangible hardware setups, evaluating multimodal AI interactions, or diving deep into user research, I focus on grounding complex technical systems in genuine human needs. I believe meaningful technology should feel natural, empowering, and deeply connected to our physical world.</div>
+
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:12px;margin-top:24px;">
+            <div style="background:#f2efe6;padding:9px 16px 11px;text-align:left;">
+              <div style="font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:rgba(22,22,26,0.5);">Based in</div>
+              <div style="font-size:17px;font-weight:600;letter-spacing:-0.2px;color:#16161a;margin-top:3px;">Stockholm, SE</div>
+            </div>
+            <a href="https://www.linkedin.com/in/yiyanhe777" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:10px;background:#f2efe6;padding:9px 16px 11px;text-align:left;transition:background 0.16s;" style-hover="background:#ffffff;">
+              
+              <span>
+                <span style="display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:rgba(22,22,26,0.5);">LinkedIn</span>
+                <span style="display:block;margin-top:2px;font-size:16px;font-weight:600;letter-spacing:-0.2px;color:#16161a;">/in/yiyanhe777</span>
+              </span>
+            </a>
+            <a href="mailto:hyy51087@gmail.com" style="display:flex;align-items:center;gap:10px;background:#f2efe6;padding:9px 16px 11px;text-align:left;transition:background 0.16s;" style-hover="background:#ffffff;">
+              
+              <span>
+                <span style="display:block;font-size:11px;letter-spacing:2.2px;text-transform:uppercase;color:rgba(22,22,26,0.5);">Email</span>
+                <span style="display:block;margin-top:2px;font-size:16px;font-weight:600;letter-spacing:-0.2px;color:#16161a;">hyy51087@gmail.com</span>
+              </span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+</div>
+
+<div id="works" style="scroll-margin-top:96px;display:flex;flex-direction:column;gap:1.2vw;padding:4.6vw 3.8vw 0;position:relative;z-index:2;">
+    <div style="display:flex;align-items:center;gap:14px;">
+      
+    </div>
+
+    <div style="position:relative;width:100%;max-width:940px;margin:0.7vw auto 0;aspect-ratio:1/0.72;">
+      <div style="position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);width:min(46%,420px);text-align:center;">
+        <div style="font-family: 'Fraunces',serif; font-weight: 700; font-style: italic; font-size: min(46px, 3.4vw); line-height: 1.08; letter-spacing: -0.6px; color: #342F2E; text-wrap: pretty; background: #f2efe6; padding: 6px 14px 10px; border-radius: 4px">What <br>would you&nbsp;like <br>to see?</div>
+      </div>
+      <a href="#cat-uiux" class="idx-tool" style="position:absolute;left:50%;top:11%;transform:translate(-50%,-50%);width:min(240px, 22%);display:flex;flex-direction:column;align-items:center;gap:0;color:#3d2a26;">
+        <img src="assets/tool-glove.svg" alt="" style="width:100%;height:auto;display:block;transform-origin:50% 78%;filter:drop-shadow(0 0.6vw 1vw rgba(61,42,38,0.22));">
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(21px, 1.55vw);letter-spacing:0.09em;text-transform:uppercase;text-align:center;white-space:nowrap;line-height:1.2;color:#f7efdf;background:#d63b2c;padding:0.5em 0.95em 0.58em;border-radius:3px;box-shadow:0 0.1em 0.24em rgba(30,22,16,0.18);transform:rotate(-3.5deg);margin-top:-0.3em;">UI / UX</span>
+      </a>
+      <a href="#cat-research" class="idx-tool" style="position:absolute;left:80%;top:36%;transform:translate(-50%,-50%);width:min(240px, 22%);display:flex;flex-direction:column;align-items:center;gap:0;color:#3d2a26;">
+        <img src="assets/tool-saw.svg" alt="" style="width:100%;height:auto;display:block;transform-origin:50% 78%;filter:drop-shadow(0 0.6vw 1vw rgba(61,42,38,0.22));">
+        
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(21px, 1.55vw);letter-spacing:0.09em;text-transform:uppercase;text-align:center;white-space:nowrap;line-height:1.2;color:#f7efdf;background:#d63b2c;padding:0.5em 0.95em 0.58em;border-radius:3px;box-shadow:0 0.1em 0.24em rgba(30,22,16,0.18);transform:rotate(2.5deg);margin-top:-0.3em;">Research</span>
+      </a>
+      <a href="#cat-multimodal" class="idx-tool" style="position:absolute;left:71%;top:74%;transform:translate(-50%,-50%);width:min(240px, 22%);display:flex;flex-direction:column;align-items:center;gap:0;color:#3d2a26;">
+        <img src="assets/tool-drill.svg" alt="" style="width:100%;height:auto;display:block;transform-origin:50% 78%;filter:drop-shadow(0 0.6vw 1vw rgba(61,42,38,0.22));">
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(21px, 1.55vw);letter-spacing:0.09em;text-transform:uppercase;text-align:center;white-space:nowrap;line-height:1.2;color:#f7efdf;background:#d63b2c;padding:0.5em 0.95em 0.58em;border-radius:3px;box-shadow:0 0.1em 0.24em rgba(30,22,16,0.18);transform:rotate(-2deg);margin-top:-0.3em;">Multimodal</span>
+      </a>
+      <a href="#cat-concept" class="idx-tool" style="position:absolute;left:34%;top:77%;transform:translate(-50%,-50%);width:min(240px, 22%);display:flex;flex-direction:column;align-items:center;gap:0;color:#3d2a26;">
+        <img src="assets/tool-brush.svg" alt="" style="width:100%;height:auto;display:block;transform-origin:50% 78%;filter:drop-shadow(0 0.6vw 1vw rgba(61,42,38,0.22));">
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(21px, 1.55vw);letter-spacing:0.09em;text-transform:uppercase;text-align:center;white-space:nowrap;line-height:1.2;color:#f7efdf;background:#d63b2c;padding:0.5em 0.95em 0.58em;border-radius:3px;box-shadow:0 0.1em 0.24em rgba(30,22,16,0.18);transform:rotate(3deg);margin-top:-0.3em;">Concept</span>
+      </a>
+      <a href="#cat-visual" class="idx-tool" style="position:absolute;left:17%;top:33%;transform:translate(-50%,-50%);width:min(240px, 22%);display:flex;flex-direction:column;align-items:center;gap:0;color:#3d2a26;">
+        <img src="assets/tool-brand.svg" alt="" style="width:100%;height:auto;display:block;transform-origin:50% 78%;filter:drop-shadow(0 0.6vw 1vw rgba(61,42,38,0.22));">
+        <span style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(21px, 1.55vw);letter-spacing:0.09em;text-transform:uppercase;text-align:center;white-space:nowrap;line-height:1.2;color:#f7efdf;background:#d63b2c;padding:0.5em 0.95em 0.58em;border-radius:3px;box-shadow:0 0.1em 0.24em rgba(30,22,16,0.18);transform:rotate(-2.5deg);margin-top:-0.3em;">Visual Design</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="cat-uiux" style="scroll-margin-top:96px;padding:44px 48px 0;position:relative;z-index:2;">
+    <div style="display:inline-flex;align-items:center;">
+      <img src="assets/tool-glove.svg" alt="" style="width:min(112px,10vw);height:min(112px,10vw);object-fit:contain;flex:none;position:relative;z-index:3;margin-right:max(-34px,-3vw);transform:rotate(-9deg) translateY(-4px);filter:drop-shadow(2.5px 0 0 #f7efdf) drop-shadow(-2.5px 0 0 #f7efdf) drop-shadow(0 2.5px 0 #f7efdf) drop-shadow(0 -2.5px 0 #f7efdf) drop-shadow(1.8px 1.8px 0 #f7efdf) drop-shadow(-1.8px 1.8px 0 #f7efdf) drop-shadow(0 1.5px 1.5px rgba(61,42,38,0.28));">
+      
+      <div style="padding:min(15px,1.35vw) min(30px,2.7vw) min(17px,1.5vw) max(44px,4vw);background:#d63b2c;border-radius:3px;box-shadow:0 min(3px,0.28vw) min(6px,0.55vw) rgba(61,42,38,0.2);">
+        <div style="font-family:'Caveat',cursive;font-size:min(26px,2.35vw);font-weight:700;letter-spacing:0.02em;white-space:nowrap;color:#f7efdf;">UI / UX</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:4vw 5vw;padding:1.4vw min(150px, 9vw) 46px;position:relative;z-index:2;">
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-EchoFind.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#1db954;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #1db954;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Figma</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Photoshop</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:#0a3d1e;display:block;"><img src="assets/echofind/j8.jpg" alt="EchoFind screens" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 62%;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#08210f;">EchoFind</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(8,33,15,0.82);margin-top:min(5px,1.4cqw);line-height:1.6;">A search redesign concept for Spotify</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">UX / UI</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">AI Redesign</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-LuckLink.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#f4a7bb;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #f4a7bb;" class="tag-card"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Figma</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">3ds Max</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">KeyShot</span><span style="transform:rotate(4deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);"><img src="assets/covers/lucklink.jpg" alt="LuckLink product mockup" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">LuckLink</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">An emotional companion product for elderly living alone</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Product Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">App Design</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-CoolBox.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#f7cf72;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #f7cf72;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Figma</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/coolbox.jpg" alt="Cool Box Plan poster" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">The Cool Box Plan</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">A cooling structure for outdoor workers</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Web Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Service Design</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-Cathletics.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#d63b2c;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #d63b2c;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Figma</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/cathletics.png" alt="Cathletics app screens" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#ffffff;">Cathletics</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(255,255,255,0.88);margin-top:min(5px,1.4cqw);line-height:1.6;">A companion app for athletes recovering from injury</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">App Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">UX Research</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="cat-research" style="scroll-margin-top:96px;padding:36px 48px 0;position:relative;z-index:2;">
+    <div style="display:inline-flex;align-items:center;">
+      <img src="assets/tool-saw.svg" alt="" style="width:min(112px,10vw);height:min(112px,10vw);object-fit:contain;flex:none;position:relative;z-index:3;margin-right:max(-34px,-3vw);transform:rotate(8deg) translateY(-4px);filter:drop-shadow(2.5px 0 0 #f7efdf) drop-shadow(-2.5px 0 0 #f7efdf) drop-shadow(0 2.5px 0 #f7efdf) drop-shadow(0 -2.5px 0 #f7efdf) drop-shadow(1.8px 1.8px 0 #f7efdf) drop-shadow(-1.8px 1.8px 0 #f7efdf) drop-shadow(0 1.5px 1.5px rgba(61,42,38,0.28));">
+      
+      <div style="padding:min(15px,1.35vw) min(30px,2.7vw) min(17px,1.5vw) max(44px,4vw);background:#d63b2c;border-radius:3px;box-shadow:0 min(3px,0.28vw) min(6px,0.55vw) rgba(61,42,38,0.2);">
+        <div style="font-family:'Caveat',cursive;font-size:min(26px,2.35vw);font-weight:700;letter-spacing:0.02em;white-space:nowrap;color:#f7efdf;">Research</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:4vw 5vw;padding:1.4vw min(150px, 9vw) 70px;position:relative;z-index:2;">
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-Cybershoes.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#a8d5c4;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #a8d5c4;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Unity</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Python</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">C#</span><span style="transform:rotate(4deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Quest 3</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/cybershoes.jpg" alt="Cybershoes worn on boots" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">Cybershoes XR</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">XR immersive room-scale walking research</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">XR Research</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Game Design</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-Agency.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#1f5b8c;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #1f5b8c;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Arduino</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Python</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Thematic Analysis</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/agency/photo4.png" alt="Arduino traffic light circuit on a breadboard" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#ffffff;">Learner Agency <span style="font-size:0.62em;">(Master thesis)</span></div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(255,255,255,0.88);margin-top:min(5px,1.4cqw);line-height:1.6;">Learner interactions in multimodal AI experiential environments</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Research</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Master Thesis</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-ARIA.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#d63b2c;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #d63b2c;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Python</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Aria SDK</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/aria.jpg" alt="ARIA glasses study scene" style="display:block;width:100%;height:100%;object-fit:cover;object-position:85% 40%;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#ffffff;">Gesture and Gaze in Referential Communication</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(255,255,255,0.88);margin-top:min(5px,1.4cqw);line-height:1.6;">A study using ARIA smart glasses</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Research</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Multimodal</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-ChewingLove.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#f7cf72;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #f7cf72;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Arduino</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">3D Printing</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">E-textiles</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/chewing-cover.jpg" alt="Chewing Love title" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">Chewing Love</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">Wearables that turn chewing rhythm into shared light</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Physical Interaction</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Eldercare</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+  <div id="cat-multimodal" style="scroll-margin-top:96px;padding:36px 48px 0;position:relative;z-index:2;">
+    <div style="display:inline-flex;align-items:center;">
+      <img src="assets/tool-drill.svg" alt="" style="width:min(112px,10vw);height:min(112px,10vw);object-fit:contain;flex:none;position:relative;z-index:3;margin-right:max(-34px,-3vw);transform:rotate(7deg) translateY(-4px);filter:drop-shadow(2.5px 0 0 #f7efdf) drop-shadow(-2.5px 0 0 #f7efdf) drop-shadow(0 2.5px 0 #f7efdf) drop-shadow(0 -2.5px 0 #f7efdf) drop-shadow(1.8px 1.8px 0 #f7efdf) drop-shadow(-1.8px 1.8px 0 #f7efdf) drop-shadow(0 1.5px 1.5px rgba(61,42,38,0.28));">
+      
+      <div style="padding:min(15px,1.35vw) min(30px,2.7vw) min(17px,1.5vw) max(44px,4vw);background:#d63b2c;border-radius:3px;box-shadow:0 min(3px,0.28vw) min(6px,0.55vw) rgba(61,42,38,0.2);">
+        <div style="font-family:'Caveat',cursive;font-size:min(26px,2.35vw);font-weight:700;letter-spacing:0.02em;white-space:nowrap;color:#f7efdf;">Multimodal</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:4vw 5vw;padding:1.4vw min(150px, 9vw) 46px;position:relative;z-index:2;">
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-Liangxiang.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#a8d5c4;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #a8d5c4;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">TouchDesigner</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Kinect</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Photoshop</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/liangxiang.jpg" alt="LIANGXIANG exhibition visuals" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">LIANGXIANG</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">Exhibition design for Tianleyuan Grand Theater</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Exhibition Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Motion Interaction</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-Chronicles.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#d63b2c;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #d63b2c;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Unity</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">C#</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/chronicles.jpg" alt="Chronicles of Shadows cover" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#ffffff;">Chronicles of Shadows</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(255,255,255,0.88);margin-top:min(5px,1.4cqw);line-height:1.6;">A narrative deduction game set in historical China</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Game Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Game Art</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div id="cat-concept" style="scroll-margin-top:96px;padding:36px 48px 0;position:relative;z-index:2;">
+    <div style="display:inline-flex;align-items:center;">
+      <img src="assets/tool-brush.svg" alt="" style="width:min(112px,10vw);height:min(112px,10vw);object-fit:contain;flex:none;position:relative;z-index:3;margin-right:max(-34px,-3vw);transform:rotate(-6deg) translateY(-4px);filter:drop-shadow(2.5px 0 0 #f7efdf) drop-shadow(-2.5px 0 0 #f7efdf) drop-shadow(0 2.5px 0 #f7efdf) drop-shadow(0 -2.5px 0 #f7efdf) drop-shadow(1.8px 1.8px 0 #f7efdf) drop-shadow(-1.8px 1.8px 0 #f7efdf) drop-shadow(0 1.5px 1.5px rgba(61,42,38,0.28));">
+      
+      <div style="padding:min(15px,1.35vw) min(30px,2.7vw) min(17px,1.5vw) max(44px,4vw);background:#d63b2c;border-radius:3px;box-shadow:0 min(3px,0.28vw) min(6px,0.55vw) rgba(61,42,38,0.2);">
+        <div style="font-family:'Caveat',cursive;font-size:min(26px,2.35vw);font-weight:700;letter-spacing:0.02em;white-space:nowrap;color:#f7efdf;">Concept</div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:4vw 5vw;padding:1.4vw min(150px, 9vw) 46px;position:relative;z-index:2;">
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-FatCompany.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#d63b2c;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #d63b2c;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Midjourney</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">3ds Max</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">KeyShot</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/fatcompany.jpg" alt="Fat Company concept visual" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">Fat Company</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">A speculative design about fat</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Speculative Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Future Design</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-KillMyself.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#f7cf72;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #f7cf72;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Premiere Pro</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Directing</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Editing</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:rgba(255,255,255,0.07);display:block;"><img src="assets/covers/killmyself.jpg" alt="Kill Myself Three Times collage" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#ffffff;">Kill Myself Three Times</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(255,255,255,0.88);margin-top:min(5px,1.4cqw);line-height:1.6;">A performance film confronting death anxiety</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Experimental Film</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+
+  </div>
+
+  <div id="cat-visual" style="scroll-margin-top:96px;padding:36px 48px 0;position:relative;z-index:2;">
+    <div style="display:inline-flex;align-items:center;">
+      <img src="assets/tool-brand.svg" alt="" style="width:min(112px,10vw);height:min(112px,10vw);object-fit:contain;flex:none;position:relative;z-index:3;margin-right:max(-34px,-3vw);transform:rotate(-7deg) translateY(-4px);filter:drop-shadow(2.5px 0 0 #f7efdf) drop-shadow(-2.5px 0 0 #f7efdf) drop-shadow(0 2.5px 0 #f7efdf) drop-shadow(0 -2.5px 0 #f7efdf) drop-shadow(1.8px 1.8px 0 #f7efdf) drop-shadow(-1.8px 1.8px 0 #f7efdf) drop-shadow(0 1.5px 1.5px rgba(61,42,38,0.28));">
+      <div style="padding:min(15px,1.35vw) min(30px,2.7vw) min(17px,1.5vw) max(44px,4vw);background:#d63b2c;border-radius:3px;box-shadow:0 min(3px,0.28vw) min(6px,0.55vw) rgba(61,42,38,0.2);">
+        <div style="font-family:'Caveat',cursive;font-size:min(26px,2.35vw);font-weight:700;letter-spacing:0.02em;white-space:nowrap;color:#f7efdf;">Visual Design</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;align-items:stretch;gap:4vw 5vw;padding:1.4vw min(150px, 9vw) 70px;position:relative;z-index:2;">
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-DinoParkVI.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#d63b2c;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #d63b2c;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">InDesign</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:#fff;display:block;"><img src="assets/vi/cover.jpg" alt="China Dinosaur Park logo lock-up" style="display:block;width:100%;height:100%;object-fit:contain;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#16161a;">China Dinosaur Park Visual Identity Manual</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(22,22,26,0.92);margin-top:min(5px,1.4cqw);line-height:1.6;">A 61-page visual identity manual</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Brand Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#16161a;color:#f7efdf;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(255,255,255,0.55);white-space:nowrap;">Logo Design</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:stretch;flex:0 1 calc((100% - 10vw)/3);min-width:110px;">
+        <a href="Project-Mortise.dc.html" style="flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;">
+          <div style="display:flex;flex-direction:column;height:100%;box-sizing:border-box;container-type:inline-size;position:relative;overflow:visible;width:100%;min-width:0;flex:none;padding:min(13px,1.7cqw);background:#1e2f31;border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.35),inset 0 0 0 min(9px,1.15cqw) #1e2f31;"><div style="position:absolute;left:-7cqw;top:4cqw;display:flex;flex-direction:column;align-items:flex-start;gap:2.6cqw;z-index:5;pointer-events:none;"><span style="transform:rotate(-4.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">InDesign</span><span style="transform:rotate(3.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Illustrator</span><span style="transform:rotate(-2.5deg);font-family:'Archivo',sans-serif;font-weight:800;font-size:4.4cqw;letter-spacing:0.05em;text-transform:uppercase;padding:1.4cqw 3.6cqw 1.7cqw;background:#fbfaf5;color:#16161a;border-radius:0.7cqw;box-shadow:0 0.8cqw 1.9cqw rgba(20,14,10,0.32);white-space:nowrap;">Photoshop</span></div>
+            <div style="width:100%;flex:none;aspect-ratio:1/1;overflow:hidden;position:relative;margin-bottom:min(20px,2.6cqw);background:#162426;display:block;"><img src="assets/mortise/cover.jpg" alt="Mortise and Tenon book cover" style="display:block;width:100%;height:100%;object-fit:cover;"></div>
+            <div style="flex:1 1 auto;flex-shrink:0;display:flex;flex-direction:column;justify-content:flex-start;"><div style="font-family:'Caveat',cursive;font-weight:700;font-size:min(34px, 9.4cqw);letter-spacing:0.2px;line-height:1.05;color:#efe6d8;">Mortise and Tenon</div>
+            <div style="font-size:min(15px, 4.2cqw);color:rgba(239,230,216,0.9);margin-top:min(5px,1.4cqw);line-height:1.6;">A book on Chinese joinery, built without nails</div>
+            <div style="display:flex;flex-wrap:wrap;gap:min(7px,1cqw);margin-top:min(13px,1.8cqw);"><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Book Design</span><span style="font-family:'Archivo',sans-serif;font-size:clamp(9px, 3.6cqw, 13px);font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:min(5px,0.7cqw) min(11px,1.5cqw) min(6px,0.8cqw);background:#f7efdf;color:#16161a;border-radius:min(3px,0.4cqw);box-shadow:min(2px,0.3cqw) min(2px,0.3cqw) 0 rgba(0,0,0,0.35);white-space:nowrap;">Layout Design</span></div></div>
+          </div>
+        </a>
+        <div style="width:100%;margin-top:0;">
+          <div style="height:min(7px,0.95cqw);background:linear-gradient(180deg,#f0dcb4,#dcc191);box-shadow:inset 0 1px 0 rgba(255,255,255,0.95);"></div>
+          <div style="height:min(10px,1.35cqw);border-radius:0 0 2px 2px;background:repeating-linear-gradient(180deg,#e2caa0 0 1.6px,#cbad7c 1.6px 3.2px);box-shadow:inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(92,68,38,0.4),0 min(7px,0.9cqw) min(12px,1.5cqw) rgba(61,42,38,0.26);"></div>
+          <div style="position:relative;height:min(12px,1.6cqw);">
+            <div style="position:absolute;left:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+            <div style="position:absolute;right:14%;top:0;width:min(10px,1.35cqw);height:min(12px,1.6cqw);border-radius:0 0 46% 46%;background:linear-gradient(96deg,#f2ddb6,#dcbe8c 52%,#b8955e);box-shadow:0 min(2px,0.3cqw) min(3px,0.4cqw) rgba(61,42,38,0.3);"></div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+  <div id="contact" style="scroll-margin-top:96px;padding:min(84px, 6vw) min(48px, 4vw) min(88px, 7vw);position:relative;z-index:2;">
+    <div style="max-width:940px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:min(30px, 2.4vw);">
+
+      <div style="position:relative;display:inline-block;transform:rotate(-1.6deg);">
+        <div style="background:#f2efe6;padding:10px 22px 14px;font-family:'Fraunces',serif;font-weight:700;font-style:italic;font-size:min(52px, 4vw);line-height:1.05;color:#16161a;">Let's talk!</div>
+        <div style="position:absolute;right:-22px;bottom:-26px;background:#f7cf72;color:#2a1c08;font-family:'Caveat',cursive;font-weight:700;font-size:min(23px, 1.7vw);padding:2px 12px 4px;transform:rotate(5deg);white-space:nowrap;">I reply fast</div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:min(28px, 2vw);margin-top:min(20px, 1.4vw);">
+
+        <a href="https://www.linkedin.com/in/yiyanhe777" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;background:#f2efe6;padding:16px 24px 18px;transform:rotate(-1.2deg);box-shadow:0 8px 20px rgba(30,22,16,0.16);transition:transform 0.18s,box-shadow 0.18s,background 0.18s;" style-hover="transform:rotate(-1.2deg) translateY(-5px);box-shadow:0 14px 30px rgba(30,22,16,0.24);background:#fbf8ee;">
+          <span style="text-align:left;">
+            <span style="display:block;font-size:min(12px, 0.85vw);letter-spacing:2.2px;text-transform:uppercase;color:rgba(22,22,26,0.5);">LinkedIn</span>
+            <span style="display:block;margin-top:3px;font-size:min(21px, 1.5vw);font-weight:600;letter-spacing:-0.2px;color:#16161a;">/in/yiyanhe777</span>
+          </span>
+        </a>
+
+        <a href="mailto:hyy51087@gmail.com" style="display:flex;align-items:center;gap:14px;background:#f2efe6;padding:16px 24px 18px;transform:rotate(1.4deg);box-shadow:0 8px 20px rgba(30,22,16,0.16);transition:transform 0.18s,box-shadow 0.18s,background 0.18s;" style-hover="transform:rotate(1.4deg) translateY(-5px);box-shadow:0 14px 30px rgba(30,22,16,0.24);background:#fbf8ee;">
+          
+          <span style="text-align:left;">
+            <span style="display:block;font-size:min(12px, 0.85vw);letter-spacing:2.2px;text-transform:uppercase;color:rgba(22,22,26,0.5);">Email</span>
+            <span style="display:block;margin-top:3px;font-size:min(21px, 1.5vw);font-weight:600;letter-spacing:-0.2px;color:#16161a;">hyy51087@gmail.com</span>
+          </span>
+        </a>
+
+      </div>
+
+      <div style="background:#f2efe6;padding:5px 15px 8px;font-family:'Caveat',cursive;font-size:min(25px, 1.8vw);color:rgba(22,22,26,0.72);transform:rotate(-0.8deg);">thanks for scrolling all the way down ↓</div>
+
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { off: [{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:0,y:0},{x:0,y:0}], drag: null, moved: false, section: 'about', scale: 1 };
+
+  componentDidMount() {
+    this.hostRef = React.createRef();
+    this.fitStage = () => {
+      const el = this.hostRef && this.hostRef.current;
+      if (!el) return;
+      const s = Math.min(1, el.clientWidth / 1200);
+      if (Math.abs(s - this.state.scale) > 0.001) this.setState({ scale: s });
+    };
+    window.addEventListener('resize', this.fitStage);
+    requestAnimationFrame(this.fitStage);
+    setTimeout(this.fitStage, 300);
+    this.trackSection = () => {
+      const w = document.getElementById('works');
+      if (!w) return;
+      const next = w.getBoundingClientRect().top <= 90 ? 'works' : 'about';
+      if (next !== this.state.section) this.setState({ section: next });
+    };
+    window.addEventListener('scroll', this.trackSection, { passive: true });
+    this.trackSection();
+    this.refs3 = [React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef(), React.createRef()];
+    this.colRef = React.createRef();
+    this.gutLRef = React.createRef();
+    this.gutRRef = React.createRef();
+    this.heroRef = React.createRef();
+    this.shellRef = React.createRef();
+    this.textBoxes = () => {
+      const root = this.colRef && this.colRef.current;
+      if (!root) return [];
+      const out = [];
+      const walk = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+      let n;
+      while ((n = walk.nextNode())) {
+        if (!n.nodeValue || !n.nodeValue.trim()) continue;
+        const rg = document.createRange();
+        rg.selectNodeContents(n);
+        const rects = rg.getClientRects();
+        for (let k = 0; k < rects.length; k++) {
+          const b = rects[k];
+          if (b.width > 2 && b.height > 2) out.push({ left: b.left, right: b.right, top: b.top, bottom: b.bottom });
+        }
+      }
+      return out;
+    };
+    this.pushOut = (base, nx, ny, boxes, box) => {
+      const pad = 8, w = base.right - base.left;
+      const minX = box ? box.left + 8 - base.left : -Infinity;
+      const maxX = box ? box.right - 8 - base.right : Infinity;
+      const minY = box ? box.top + 8 - base.top : -Infinity;
+      const maxY = box ? box.bottom - 8 - base.bottom : Infinity;
+      for (let pass = 0; pass < 3; pass++) {
+        let hit = false;
+        for (let k = 0; k < boxes.length; k++) {
+          const t = boxes[k];
+          const L = base.left + nx, Rr = base.right + nx, T = base.top + ny, B = base.bottom + ny;
+          if (B <= t.top - pad || T >= t.bottom + pad) continue;
+          if (Rr <= t.left - pad || L >= t.right + pad) continue;
+          hit = true;
+          const left = t.left - pad - base.right;
+          const right = t.right + pad - base.left;
+          const goLeft = (base.left + nx + base.right + nx) / 2 < (t.left + t.right) / 2;
+          const first = goLeft ? left : right, second = goLeft ? right : left;
+          if (first >= minX && first <= maxX) { nx = first; }
+          else if (second >= minX && second <= maxX) { nx = second; }
+          else {
+            const up = t.top - pad - base.bottom, down = t.bottom + pad - base.top;
+            const preferUp = Math.abs(up - ny) <= Math.abs(down - ny);
+            const fy = preferUp ? up : down, sy = preferUp ? down : up;
+            if (fy >= minY && fy <= maxY) ny = fy;
+            else if (sy >= minY && sy <= maxY) ny = sy;
+          }
+        }
+        if (!hit) break;
+      }
+      return { x: nx, y: ny };
+    };
+    let saved = null;
+    try { saved = JSON.parse(localStorage.getItem('hyy-home-stickers-v10') || 'null'); } catch (e) {}
+    if (Array.isArray(saved) && saved.length) { const o = this.state.off.slice(); saved.forEach((p, i) => { if (p && i < o.length) o[i] = p; }); this.setState({ off: o, moved: o.some(p => p.x || p.y) }); }
+    this.onMove = (e) => {
+      const d = this.state.drag;
+      if (!d) return;
+      const k = this.state.scale || 1;
+      let nx = d.ox + (e.clientX - d.sx) / k;
+      let ny = d.oy + (e.clientY - d.sy) / k;
+      const el = this.refs3 && this.refs3[d.i] ? this.refs3[d.i].current : null;
+      if (el) {
+        const minX = -el.offsetLeft, maxX = 1200 - el.offsetLeft - el.offsetWidth;
+        const minY = -el.offsetTop, maxY = 1130 - el.offsetTop - el.offsetHeight;
+        nx = Math.min(Math.max(nx, minX), Math.max(minX, maxX));
+        ny = Math.min(Math.max(ny, minY), Math.max(minY, maxY));
+      }
+      const off = this.state.off.slice();
+      off[d.i] = { x: nx, y: ny };
+      this.setState({ off, moved: true });
+    };
+    this.onUp = () => {
+      if (!this.state.drag) return;
+      this.setState({ drag: null });
+      try { localStorage.setItem('hyy-home-stickers-v10', JSON.stringify(this.state.off)); } catch (e) {}
+    };
+    this.clampAll = () => {
+      const off = this.state.off.slice();
+      let changed = false;
+      for (let i = 0; i < this.refs3.length; i++) {
+        const el = this.refs3[i] && this.refs3[i].current;
+        if (!el) continue;
+        const o = off[i];
+        let nx = o.x, ny = o.y;
+        const minX = -el.offsetLeft, maxX = 1200 - el.offsetLeft - el.offsetWidth;
+        const minY = -el.offsetTop, maxY = 1130 - el.offsetTop - el.offsetHeight;
+        nx = Math.min(Math.max(nx, Math.min(minX, maxX)), Math.max(minX, maxX));
+        ny = Math.min(Math.max(ny, Math.min(minY, maxY)), Math.max(minY, maxY));
+        if (nx !== o.x || ny !== o.y) { off[i] = { x: nx, y: ny }; changed = true; }
+      }
+      if (changed) {
+        this.setState({ off });
+        try { localStorage.setItem('hyy-home-stickers-v10', JSON.stringify(off)); } catch (e) {}
+      }
+    };
+    window.addEventListener('resize', this.clampAll);
+    requestAnimationFrame(() => this.clampAll());
+    setTimeout(() => this.clampAll(), 400);
+    setTimeout(() => this.clampAll(), 1200);
+    window.addEventListener("load", this.clampAll);
+    window.addEventListener('pointermove', this.onMove);
+    window.addEventListener('pointerup', this.onUp);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.clampAll);
+    window.removeEventListener('pointermove', this.onMove);
+    window.removeEventListener('pointerup', this.onUp);
+  }
+
+  renderVals() {
+    const off = this.state.off;
+    const drag = this.state.drag;
+    const sec = this.state.section;
+    const navWorksBg = sec === 'works' ? '#f7efdf' : 'transparent';
+    const navWorksFg = sec === 'works' ? '#d63b2c' : 'rgba(247,239,223,0.78)';
+    const navAboutBg = sec === 'about' ? '#f7efdf' : 'transparent';
+    const navAboutFg = sec === 'about' ? '#d63b2c' : 'rgba(247,239,223,0.78)';
+    const start = (e) => {
+      const i = Number(e.currentTarget.dataset.i);
+      e.preventDefault();
+      const el = this.refs3 && this.refs3[i] ? this.refs3[i].current : e.currentTarget;
+      const r = el.getBoundingClientRect();
+      const o = off[i];
+      const base = { left: r.left - o.x, right: r.right - o.x, top: r.top - o.y, bottom: r.bottom - o.y, width: r.width, height: r.height };
+      const g = this.heroRef && this.heroRef.current ? this.heroRef.current.getBoundingClientRect() : null;
+      const gut = g ? { left: g.left, right: g.right, top: g.top, bottom: g.bottom } : null;
+      this.setState({ drag: { i, sx: e.clientX, sy: e.clientY, ox: o.x, oy: o.y, base, hero: gut, shell: gut }, moved: true });
+    };
+    const d = (i) => off[i].x + 'px ' + off[i].y + 'px';
+    return {
+      startDrag: start,
+      hintOpacity: this.state.moved ? 0 : 1,
+      navWorksBg, navWorksFg, navAboutBg, navAboutFg,
+      hostRef: this.hostRef,
+      scale: this.state.scale,
+      hostH: Math.round(1130 * this.state.scale),
+      gutLRef: this.gutLRef,
+      gutRRef: this.gutRRef,
+      colRef: this.colRef,
+      heroRef: this.heroRef,
+      shellRef: this.shellRef,
+      ref0: this.refs3 && this.refs3[0], ref1: this.refs3 && this.refs3[1], ref2: this.refs3 && this.refs3[2],
+      ref3: this.refs3 && this.refs3[3], ref4: this.refs3 && this.refs3[4], ref5: this.refs3 && this.refs3[5],
+      d0: d(0), d1: d(1), d2: d(2), d3: d(3), d4: d(4), d5: d(5),
+      z0: drag && drag.i === 0 ? 40 : 3,
+      z1: drag && drag.i === 1 ? 40 : 3,
+      z2: drag && drag.i === 2 ? 40 : 3,
+      z3: drag && drag.i === 3 ? 40 : 4,
+      z4: drag && drag.i === 4 ? 40 : 4,
+      z5: drag && drag.i === 5 ? 40 : 3
+    };
+  }
+}
+</script>
+</body>
+</html>
+

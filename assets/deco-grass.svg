@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="106" height="98" viewBox="1444.7 1446.3 106.0 98.0">
+<defs>
+    <linearGradient id="_未命名的渐变" data-name="未命名的渐变" x1="168.46" y1="13.14" x2="161.66" y2="88.5" gradientTransform="translate(0 692)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d89d7b"></stop>
+      <stop offset="1" stop-color="#f2d3aa"></stop>
+    </linearGradient>
+  </defs>
+<path d="M1459,1536c8.4-17,16.9-30.2,35.7-36.4,11.2-3.7,26.1-4.3,36.8,1.2,5.9,3,8.6,6.8,10.8,13l-.3,1.9c-3.7.8-9.5-2.7-13.2-3.7-22.5-6.2-41.4,3.8-53.9,22.6-.3.5-.6.9-.9,1.4h-15Z" fill="#2f3a2c" stroke-width="0"></path>
+<path d="M1500,1455.1c3.9-.3,8.2-.8,12.2-.4s8.4,1.8,11.1,4.9c-.4,6.7-18.4,8.3-24,10.1-4.3,1.4-8.7,3.4-12.6,5.8-14,8.5-16.4,33-21.9,39-4,5.4-7,11.2-10.1,17-2-19.8,1.1-35.7,11.8-52.9,8.2-13.3,18.5-19.8,33.5-23.5Z" fill="#2f3a2c" stroke-width="0"></path>
+</svg>
